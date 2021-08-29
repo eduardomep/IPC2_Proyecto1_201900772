@@ -1,5 +1,6 @@
-import upload_file
+import file
 import graph
+import route
 import student
 
 def print_menu():
@@ -20,12 +21,14 @@ def menu_selector():
     print("Seleccione una opcion para continuar:")
     menu_option = str(input())
     if(menu_option == "1"):
-        print(upload_file.get_file())
+        print(file.get_file())
         print_menu()
     elif(menu_option == "2"):
-        print(f"Seleccionaste {menu_option}")
+        route.print_terrains()
+        print_menu()
     elif(menu_option == "3"):
-        print(f"Seleccionaste {menu_option}")
+        file.create_file()
+        print_menu()
     elif(menu_option == "4"):
         print(student.print_data())
         print_menu()

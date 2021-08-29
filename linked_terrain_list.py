@@ -35,3 +35,49 @@ class Linked_terrain_list:
             counter+=1
             current = current.next
         return False
+    def get_terrain_map_traveled(self,id):
+        counter=1
+        current = self.first
+        while current != None:
+            if(counter==id):
+                return current.terrain.grid_traveled
+            counter+=1
+            current = current.next
+        return False
+    def get_terrain_name(self,id):
+        counter=1
+        current = self.first
+        while current != None:
+            if(counter==id):
+                return current.terrain.name
+            counter+=1
+            current = current.next
+        return False
+    def get_terrain_positions(self,id):
+        counter=1
+        current = self.first
+        while current != None:
+            if(counter==id):
+                return [int(current.terrain.xi),int(current.terrain.yi),int(current.terrain.xf),int(current.terrain.yf),]
+            counter+=1
+            current = current.next
+        return False
+    def get_terrain_output_data(self,id):
+        counter=1
+        current = self.first
+        while current != None:
+            if(counter==id):
+                return [current.terrain.name,int(current.terrain.xi),int(current.terrain.yi),int(current.terrain.xf),int(current.terrain.yf),current.terrain.gasoline,current.terrain.grid_traveled]
+            counter+=1
+            current = current.next
+        return False
+    def update_gas(self,id,gas):
+        counter=1
+        current = self.first
+        while current != None:
+            if(counter==id):
+                current.terrain.gasoline = gas
+                return True
+            counter+=1
+            current = current.next
+        return False
